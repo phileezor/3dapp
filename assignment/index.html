@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Cola Soda Connoisseurs</title>
+        <!-- Required meta tags -->  
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+            rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+            crossorigin="anonymous">
+
+        <!-- X3dom -->
+        <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/x3dom/release/x3dom.css">
+        <!-- Font Awesome Webfonts -->
+        <link rel="stylesheet" href="css/all.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/custom.css">
+
+        <!-- Fancybox CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" 
+        integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="scripts/js/getJsonData.js"></script>
+        <script src="scripts/js/all.js"></script>
+        <script src="scripts/js/gallery_generator.js"></script>
+        <script src="scripts/php/hook.php"></script>
+    </head>
+
+    <body id="bodyColor">
+
+        <!-- NAVIGATION BAR :: FOR THE ENTIRE SITE -->
+        <nav id="headerColor" class="navbar sticky-top navbar-expand-sm navbar_coca_cola">
+            <div class="container-fluid">
+                <!-- NEW BRANDING -->
+                <div class="logo">
+                    <a class="navbar-brand" href="index.html">
+                        <h1>1</h1>
+                        <h1>ola</h1>
+                        <h2>Soda</h2>
+                        <h3></h3>
+                        <p class="oasis">The Coke Connoisseur <strong>Oasis</strong></p>
+                    </a>
+                </div>
+                <!-- BUTTON TOGGLE  -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Links -->
+                    <ul class="navbar-nav mx-auto"> <!-- Use mx-auto to align centre, default to left or use mr-auto -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <!-- MODELS -->
+                        <li class="nav-item">
+                            <a id="navModels" class="nav-link"  href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" 
+                            title="X3D Models" 
+                            data-content="Here you can find 3D model collection of beverages. Enjoy moving them around and inspecting them.">Models</a>
+                        </li>
+                        <!-- CONTACT -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">Contact</a>
+                        </li>
+                        <!-- ABOUT -->
+                        <li class="nav-item">
+                            <a id="navAbout" class="nav-link" href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom"
+                                title="About Coke Cola Connoisseur"
+                                data-content="This 3D app was made by a Coke Connoisseur for Coke Connoisseurs.
+                                Coca-Cola superior form of soda.">
+                                About</a>
+                        </li>
+                        <!-- STATEMENT OF ORIGINALITY -->
+                        <li class="nav-item">
+                            <a id="navStatement" class="nav-link"  href="#" title="X3D Models">Statement of Originality</a>
+                        </li>
+                        <!-- SITE MAP AND REFERENCES -->
+                        <li class="nav-item">
+                            <a id="navRefsite" class="nav-link" href="#">Site Map & References</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- SPA STARTS-->
+        <!-- MAIN BODY :: FOR THE ENTIRE SITE -->
+        <div class="container-fluid main_contents">
+            <!-- HOME PAGE -->
+            <div id="home">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div id="main_3d_image">
+                            <div id="main_text" class="col-xs-12 col-sm-4" style="position: fixed; top: 80px; left: 20px;">
+                                <div id="title_home"></div>
+                                <div id="subTitle_home"></div>
+                                <div id="description_home"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- COCA-COLA INFORMATION -->
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <a href="javascript:swap('coke')">
+                                <img class="card-img-top img-fluid img-thumbnail rounded" src="assets/images/site_images/coca_cola.png" alt="Coca Cola">
+                            </a>
+                            <div class="card-body">
+                                <div id="title_left" class="card-title drinksText"></div>
+                                <div id="subTitle_left" class="card-subtitle drinksText"></div>
+                                <div id="description_left" class="card-text drinksText"></div>   
+                                <a href="http://www.coca-cola.co.uk/drinks/coca-cola/coca-cola" 
+                                class="btn btn-primary btn-responsive">Find out more ...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- OASIS INFORMATION -->
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <a href="javascript:swap('oasis')">
+                                <img class="card-img-top img-fluid img-thumbnail" src="assets/images/site_images/oasis.jpeg"
+                                    alt="Coca Cola">
+                            </a>
+                            <div class="card-body">
+                                <div id="title_centre" class="card-title drinksText"></div>
+                                <div id="subTitle_centre" class="card-subtitle drinksText"></div>
+                                <div id="description_centre" class="card-text drinksText"></div>   
+                                <a href="http://www.coca-cola.co.uk/drinks/oasis/oasis" 
+                                class="btn btn-primary btn-responsive">Find out more ...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- DR. PEPPER INFORMATION -->
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <a href="javascript:swap('pepper')">
+                                <img class="card-img-top img-fluid img-thumbnail" src="assets/images/site_images/dr_pepper.png"
+                                    alt="Coca Cola">
+                            </a>
+                            <div class="card-body">
+                                <div id="title_right" class="card-title drinksText"></div>
+                                <div id="subTitle_right" class="card-subtitle drinksText"></div>
+                                <div id="description_right" class="card-text drinksText"></div>   
+                                <a href="http://www.coca-cola.co.uk/drinks/dr-pepper/dr-pepper" 
+                                class="btn btn-primary btn-responsive">Find out more ...</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SPRITE -->
+                    <div class="col-sm-3">
+                        <div class="card">
+                            <a href="javascript:swap('sprite')">
+                                <img class="card-img-top img-fluid img-thumbnail" src="assets/images/site_images/sprite.png"
+                                    alt="Coca Cola">
+                            </a>
+                            <div class="card-body">
+                                <div id="title_rightS" class="card-title drinksText"></div>
+                                <div id="subTitle_rightS" class="card-subtitle drinksText"></div>
+                                <div id="description_rightS" class="card-text drinksText"></div>   
+                                <a href="http://www.coca-cola.co.uk/drinks/sprite" 
+                                class="btn btn-primary btn-responsive">Find out more ...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MODELS -->
+            <div id="models">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="card text-left">
+                            <div class="card-header">
+                                <ul class="nav nav-tabs card-header-tabs">
+                                    <li class="nav-item">
+                                        <a id="navCoke" class="nav-link" href="#">Coke</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a id="navOasis" class="nav-link" href="#">Oasis</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a id="navPepper" class="nav-link" href="#">Pepper</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a id="navSprite" class="nav-link" href="#">Sprite</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <!-- Coke X3D model -->
+                                <div id="coke">
+                                    <div id="x3dModelTitle_coke" class="card-title
+                                        drinksText"></div>
+                                    <!-- Place the X3D code here -->
+                                    <div class="model3D">
+                                        <x3d>
+                                            <scene>
+                                                <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/finalCoke.x3d"></inline>
+                                            </scene>
+                                        </x3d>
+                                    </div>
+                                    <div id="x3dCreationMethod_coke"
+                                        class="card-text drinksText"></div>
+                                </div>
+                                <!-- Oasis X3D model -->
+                                <div id="oasis" style="display:none;">
+                                    <div id="x3dModelTitle_oasis" class="card-title drinksText"></div>
+                                    <!-- Place the X3D code here -->
+                                    <div class="model3D">
+                                        <x3d id="model">
+                                            <scene>
+                                                <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/finalOasis.x3d"></inline>
+                                            </scene>
+                                        </x3d>
+                                    </div>
+                                    <div id="x3dCreationMethod_oasis" class="card-text drinksText"></div>
+                                </div>
+                                <!-- Pepper X3D model -->
+                                <div id="pepper" style="display:none;">
+                                    <div id="x3dModelTitle_pepper" class="card-title drinksText"></div>
+                                    <!-- Place the X3D code here -->
+                                    <div class="model3D">
+                                        <x3d>
+                                            <scene>
+                                                <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/finalPepper.x3d"></inline>
+                                            </scene>
+                                        </x3d>
+                                    </div>
+                                    <div id="x3dCreationMethod_pepper" class="card-text drinksText"></div>
+                                </div>
+                                <!-- Pepper X3D model -->
+                                <div id="sprite" style="display:none;">
+                                    <div id="x3dModelTitle_pepper" class="card-title drinksText"></div>
+                                    <!-- Place the X3D code here -->
+                                    <div class="model3D">
+                                        <x3d>
+                                            <scene>
+                                                <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/spriteFinal.x3d"></inline>
+                                            </scene>
+                                        </x3d>
+                                    </div>
+                                    <div id="x3dCreationMethod_pepper" class="card-text drinksText"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery -->
+                    <div class="col-sm-3">
+                        <div class="card text-left">
+                            <div class="card-header gallery-header">
+                                <ul class="nav nav-tabs card-header-tabs">
+                                    <li class="nav-item">
+                                        <h3><a class="nav-link" href="https://www.coca-cola.co.uk/brands">Drinks</a></h3>
+                                    </li>
+                            </div>
+                            <div class="card-body">
+                                <div class="gallery" id="gallery"></div>
+                                <div class="card-text description_gallery drinksText"></div>
+                            </div>
+                        </div> 
+                    </div> 
+                </div> 
+            </div>
+            <!-- STATEMENT OF ORIGINALITY -->
+            <div id="statement">
+                <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-md-8">
+                            <div class="card text-center mx-auto stateText">
+                                <div class="card-body">
+                                    <div class="card-header">
+                                        <h1>Statement of Originality</h1>
+                                    </div>
+                                    <br>
+                                    <p>This 3D SPA web application is submitted as a requirement for the module of 
+                                        <strong>Web 3D Applications</strong> at the University of Sussex. It is the 
+                                        product of my own labour except where indicated.
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ABOUT -->
+            <div id="about">
+                <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-md-8">
+                            <div class="card text-center mx-auto stateText">
+                                <div class="card-body">
+                                    <div class="card-header">
+                                        <h1>About Cola Soda...</h1>
+                                    </div>
+                                    <br>
+                                    <p>Cola Soda was developed with the purpose of showcasing a 3D application but also
+                                        to show the deep admiration and fizzy nature of Coca Colas collection of sodas. This 
+                                        <strong>Web 3D Application</strong> is designed to fulfill most if not all of the requirements
+                                        for the assignment. Enjoy and keep exploring.
+                                    </p>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- REFERENCES AND SITE MAP -->
+            <div id="refsite">
+                <div class="container">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="card text-center mx-auto stateText">
+                          <div class="card-header">
+                            <h1>References</h1>
+                          </div>
+                            <p><a href="https://en.wikipedia.org/wiki/Coca-Cola">Coca-Cola Information</a></p>
+                            <p><a href="https://www.coca-cola.co.uk/brands">Coca-Cola Brands</a></p>
+                            <p><a href="https://github.com/martinwh/3D_Apps_2020">Github Guide</a></p>
+                            <p><a href="http://users.sussex.ac.uk/~martinwh/3dapp/labs/"> Site Structuring</a></p>
+                            <p><a href="https://www.youtube.com/watch?v=IrImZ9GKhEQ&ab_channel=tutor4u">Blender modelling</a></p>
+                            <p><a href="https://www.oreilly.com/library/view/blender-3d-printing/9781788390545/ba4af381-06a1-4415-9d79-6630a1d20f93.xhtml">X3D I</a></p>
+                            <p><a href="https://www.x3dom.org/nodes/">X3D II</a></li>
+                          <br>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card text-center mx-auto px-1 stateText h-80 w-100">
+                          <div class="card-header">
+                            <h1>Site Map</h1>
+                          </div>
+                          <br>
+                          <img  id="mapImg" src="/assets/images/mindMap.jpg" 
+                          alt="Full site map of the web application and its traversal">
+                          <br>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+            </div>
+            <!-- MODEL INTERACTION -->
+            <div id="interaction" class="row">
+                <!-- Column for the camera view controls -->
+                <div class="col-sm-4">
+                    <div class="card text-left">
+                        <div class="card-body">
+                            <div class="card-Title x3dCamera_Subtitle drinksText">
+                                <h3>Camera Perspectives</h3>
+                            </div>
+                            <br>
+                            <a href="#" class="btn btn-success btn-responsive" onclick="vFront();">Front</a>
+                            <a href="#" class="btn btn-success btn-responsive" onclick="vBack();">Back</a>
+                            <a href="#" class="btn btn-primary btn-responsive" onclick="vLeft();">L. Side</a>
+                            <a href="#" class="btn btn-primary btn-responsive" onclick="vRight();">R. Side</a>
+                            <a href="#" class="btn btn-secondary btn-responsive" onclick="vTop();">Top</a>
+                            <a href="#" class="btn btn-secondary btn-responsive" onclick="vBottom();">Bottom</a>
+                            <div class="card-text x3dCameraDescription drinksText">
+                                <p>Click one of the buttons above to inspect the model.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="col-sm-4">
+                    <div class="card text-left">
+                        
+                        <div class="card-body">
+                            <div class="card-Title x3dRendersubtitle
+                                drinksText">
+                                <h3>Model Insight and Light</h3>
+                            </div>
+                            <br>
+                            <a href="#" class="btn btn-primary btn-responsive" onclick="vPoly();">Poly</a>
+                            <a href="#" class="btn btn-primary btn-responsive" onclick="vWire();">Wire</a>
+                            <a href="#" class="btn btn-primary btn-responsive" onclick="vLight();">Lights</a>
+                            <div class="card-text x3dCameraDescription drinksText">
+                                <p>Click the buttons above for further insight on the model. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- COKE DESCRIPTIVE TEXT -->
+            <div id="cokeDescription" class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="title_coke" class="card-title drinksText"></div>
+                            <div id="subTitle_coke" class="card-subtitle
+                                drinksText"></div>
+                            <div id="description_coke" class="card-text drinksText">
+                            </div>
+                            <a
+                                href="http://www.coca-cola.co.uk/drinks/coca-cola/coca-cola"
+                                class="btn btn-primary btn-responsive">Visit
+                                Coke</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- OASIS DESCRIPTIVE TEXT -->
+            <div id="oasisDescription" class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="title_oasis" class="card-title
+                                drinksText"></div>
+                            <div id="subTitle_oasis" class="card-subtitle
+                                drinksText"></div>
+                            <div id="description_oasis" class="card-text
+                                drinksText"></div>
+                            <a
+                                href="https://www.coca-cola.co.uk/brands/oasis"
+                                class="btn btn-primary btn-responsive">Visit
+                                Oasis</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <!-- DR. PEPPER DESCRIPTIVE TEXT -->
+            <div id="pepperDescription" class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="title_pepper" class="card-title drinksText"></div>
+                            <div id="subTitle_pepper" class="card-subtitle drinksText"></div>
+                            <div id="description_pepper" class="card-text drinksText"></div>
+                            <a href="http://www.coca-cola.co.uk/drinks/dr-pepper/dr-pepper"
+                                class="btn btn-primary btn-responisve">Visit Pepper.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="spriteDescription" class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div id="title_sprite" class="card-title drinksText"></div>
+                            <div id="subTitle_sprite" class="card-subtitle drinksText"></div>
+                            <div id="description_sprite" class="card-text drinksText"></div>
+                            <a href="http://www.coca-cola.co.uk/drinks/dr-pepper/dr-pepper"
+                                class="btn btn-primary btn-responisve">Visit Pepper.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div>
+        <!-- SPA ENDS-->
+            
+        <!-- FOOTER :: FOR THE ENTIRE SITE -->
+        <nav id="footerColor" class="navbar navbar-expand-sm footer">
+            <div class="container-fluid">
+                <div class="navbar-text float-left copyright">
+                    <p><span class="align-baseline">&copy 2023 Cola Soda Connoisseurs<br>
+                        <a href="javascript:changeLook()">Restyle</a> | 
+                        <a href="javascript:changeBack()">Reset</a>
+                    </span></p>
+                </div>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto archiveText">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">GitHub Archive</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Models Archive</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-text social">
+                    <a href="#"><i class="fab fa-github-square fa-2x fa-pull-right"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-square fa-2x fa-pull-right"></i></a>
+                    <a href="#"><i class="fab fa-twitter-square fa-2x fa-pull-right"></i></a>
+                    <a href="#"><i class="fab fa-facebook-square fa-2x fa-pull-right"></i></a>
+                </div>
+            </div>
+
+            <style>
+                .navbar-text a {
+                    color: #FFF8E7;
+                    text-decoration: none;
+                }
+            </style>
+        </nav>
+        <!-- MODAL :: FOR CONTACT-->
+        <div class="modal fade" id="contactModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Contact Details:</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <p>You can contact me at: <br><a href="mailto:po87@sussex.ac.uk"><strong>po87@sussex.ac.uk</strong></a></p>
+                        <p>For feedback and questions just send me an email I'll do my best to answer any queries</p>
+
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SCRIPTS -->
+        <div>
+            <!-- Popper.js -->
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+            <!-- Bootstrap JS -->
+            <script src="scripts/js/bootstrap.js"></script>
+            <!-- JS -->
+            <!-- Other scripts -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" 
+                    integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" 
+                    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="scripts/js/modelInteractions.js"></script>
+            <!-- X3DOM -->
+            <script src="https://x3dom.org/download/dev/x3dom-full.js"></script>
+            <script src="scripts/js/custom.js" crossorigin="anonymous"></script>
+            <script src="scripts/js/swap_restyle.js"></script>
+        </div>
+        
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+                integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+                crossorigin="anonymous"></script> -->
+    </body>
+
+</html>
